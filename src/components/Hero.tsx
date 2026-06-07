@@ -1,0 +1,98 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { products } from '../data';
+import { IconWrapper } from './IconWrapper';
+
+interface HeroProps {
+  onScrollToProducts: () => void;
+}
+
+export function Hero({ onScrollToProducts }: HeroProps) {
+  return (
+    <section id="home" className="pt-32 pb-20 px-6 min-h-[90vh] flex items-center max-w-7xl mx-auto w-full relative z-10">
+      <div className="flex flex-col-reverse md:flex-row items-center w-full justify-between">
+        
+        {/* Left side: Zig-zag AI List */}
+        <div className="w-full md:w-1/2 mt-16 md:mt-0 flex flex-col justify-center space-y-4">
+          {products.map((product, index) => {
+            // Create a zig-zag effect
+            const isEven = index % 2 === 0;
+            const xOffset = isEven ? 'md:translate-x-0' : 'md:translate-x-12';
+            
+            return (
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                key={product.id}
+                className={`flex items-center space-x-4 bg-gray-900/40 border border-gray-800 backdrop-blur-sm p-3 rounded-xl hover-glow-green cursor-pointer transition-all duration-300 w-full sm:w-[85%] ${xOffset}`}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center">
+                  <IconWrapper iconName={product.iconName} size={20} className="text-gray-300" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-200">{product.name}</h4>
+                  <p className="text-emerald-400 text-xs font-medium">¥{product.price}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Right side: Texts & CTA */}
+        <div className="w-full md:w-1/2 text-left md:text-right pl-0 md:pl-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center space-x-2 bg-gray-800/50 border border-gray-700 rounded-full px-3 py-1 mb-6"
+          >
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-xs text-gray-300 font-medium">可信赖的高级 AI 平台</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-white"
+          >
+            以实惠价格 <br />
+            使用 <span className="text-emerald-400 glow-green inline-block">高级 AI</span> <br />
+            工具
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-gray-400 text-lg sm:text-xl max-w-lg ml-auto mb-10 leading-relaxed"
+          >
+            购买 Gemini Ultra、Claude 5x/20x 和 Cursor Ultra 的访问权限，价格实惠。即时激活，全天候支持。
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap items-center justify-start md:justify-end gap-4"
+          >
+            <button 
+              onClick={onScrollToProducts}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-medium transition-colors shadow-[0_0_15px_rgba(16,185,129,0.3)] border border-emerald-400/50"
+            >
+              查看客栈
+            </button>
+            <a 
+              href="#payment"
+              className="bg-gray-800 hover:bg-gray-700 text-white border border-gray-600 px-8 py-3 rounded-lg font-medium transition-colors"
+            >
+              支付方式
+            </a>
+          </motion.div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
