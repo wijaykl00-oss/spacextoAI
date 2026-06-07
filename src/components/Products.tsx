@@ -3,6 +3,7 @@ import { Check, Info, ShieldCheck } from 'lucide-react';
 import { products } from '../data';
 import { IconWrapper } from './IconWrapper';
 import { Product } from '../types';
+import cardBgVideo from '../../foto bahan/Backgroundasli2.mp4';
 
 interface ProductsProps {
   onBuyClick: (product: Product) => void;
@@ -34,7 +35,19 @@ export function Products({ onBuyClick }: ProductsProps) {
             className="bg-gray-900 border border-gray-800 rounded-2xl p-6 relative overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-colors"
           >
             {/* Background elements */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
+            <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover opacity-[0.25] mix-blend-screen"
+              >
+                <source src={cardBgVideo} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gray-900/40 mix-blend-multiply"></div>
+            </div>
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-colors duration-500 z-0"></div>
             
             {product.tag && (
               <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl z-20">
