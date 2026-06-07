@@ -44,8 +44,12 @@ export function Products({ onBuyClick }: ProductsProps) {
 
             <div className="flex flex-col flex-grow relative z-10">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-black border border-gray-800 flex items-center justify-center">
-                  <IconWrapper iconName={product.iconName} size={24} className="text-gray-200" />
+                <div className="w-12 h-12 rounded-xl bg-black border border-gray-800 flex items-center justify-center overflow-hidden">
+                  {product.image ? (
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <IconWrapper iconName={product.iconName} size={24} className="text-gray-200" />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">{product.name}</h3>

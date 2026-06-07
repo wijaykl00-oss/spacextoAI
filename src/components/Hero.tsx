@@ -27,8 +27,12 @@ export function Hero({ onScrollToProducts }: HeroProps) {
                 key={product.id}
                 className={`flex items-center space-x-4 bg-gray-900/40 border border-gray-800 backdrop-blur-sm p-3 rounded-xl hover-glow-green cursor-pointer transition-all duration-300 w-full sm:w-[85%] ${xOffset}`}
               >
-                <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center">
-                  <IconWrapper iconName={product.iconName} size={20} className="text-gray-300" />
+                <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center overflow-hidden">
+                  {product.image ? (
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <IconWrapper iconName={product.iconName} size={20} className="text-gray-300" />
+                  )}
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-gray-200">{product.name}</h4>

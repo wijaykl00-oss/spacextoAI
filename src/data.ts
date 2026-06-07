@@ -1,4 +1,8 @@
 import { Product } from './types';
+import geminiImg from '../foto bahan/Gemini.png';
+import claudeImg from '../foto bahan/claude.png';
+import cursorImg from '../foto bahan/cursor ultra.png';
+import gptImg from '../foto bahan/gpt 5x.jpeg';
 
 export const products: Product[] = [
   {
@@ -6,6 +10,7 @@ export const products: Product[] = [
     name: 'Gemini Ultra',
     price: 180,
     iconName: 'Sparkles',
+    image: geminiImg,
     description: '可邀请 5 名家庭成员，专为个人专属',
     features: [
       '完整访问 Gemini Ultra API',
@@ -20,6 +25,7 @@ export const products: Product[] = [
     name: 'Claude 5 x',
     price: 298,
     iconName: 'BrainCircuit',
+    image: claudeImg,
     description: 'Anthropic Claude 深度思考与推理能力',
     features: [
       '深度思考模式',
@@ -34,6 +40,7 @@ export const products: Product[] = [
     name: 'Claude 20 x',
     price: 500,
     iconName: 'Zap',
+    image: claudeImg,
     description: '面向企业和专业用户的最强 Claude',
     features: [
       '无限深度思考',
@@ -48,6 +55,7 @@ export const products: Product[] = [
     name: 'Cursor Ultra',
     price: 341,
     iconName: 'Code2',
+    image: cursorImg,
     description: '无限制的 AI 代码补全，专为开发者打造',
     features: [
       '无限 AI 代码补全',
@@ -62,6 +70,7 @@ export const products: Product[] = [
     name: 'Gpt Pro 5 x',
     price: 300,
     iconName: 'MessageSquare',
+    image: gptImg,
     description: 'OpenAI 旗舰模型，极速响应',
     features: [
       '无限 GPT-4 & GPT-5 访问',
@@ -78,6 +87,7 @@ export const products: Product[] = [
     name: 'Gpt Pro 20 x',
     price: 520,
     iconName: 'Bot',
+    image: gptImg,
     description: 'OpenAI 殿堂级版，适合高频使用者',
     features: [
       '无限 GPT-4 & GPT-5 访问',
