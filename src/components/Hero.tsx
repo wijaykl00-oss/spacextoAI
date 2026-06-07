@@ -57,9 +57,8 @@ export function Hero({ onScrollToProducts }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-white"
           >
-            以实惠价格 <br />
-            使用 <span className="text-emerald-400 glow-green inline-block">高级 AI</span> <br />
-            工具
+            更实惠的价格， <br />
+            畅享 <span className="relative inline-block text-emerald-400 glow-green-shimmer">高级 AI 工具<span className="absolute left-0 -bottom-1.5 w-full glowing-beam-line"></span></span>。
           </motion.h1>
 
           <motion.p 

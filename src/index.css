@@ -57,3 +57,57 @@ body::before {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-green);
 }
+
+/* Custom Text Shimmer Effect */
+@keyframes text-shimmer-sweep {
+  0% { background-position: -150% center; }
+  100% { background-position: 150% center; }
+}
+
+.glow-green-shimmer {
+  background: linear-gradient(120deg, #10b981 0%, #34d399 25%, #ffffff 50%, #34d399 75%, #10b981 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.6));
+  animation: text-shimmer-sweep 4s linear infinite;
+}
+
+/* Animated glowing neon line */
+@keyframes neon-beam-blink {
+  0%, 100% {
+    opacity: 0.15;
+    box-shadow: 0 0 4px rgba(16, 185, 129, 0.2);
+  }
+  20%, 80% {
+    opacity: 0.9;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.8), 0 0 24px rgba(52, 211, 153, 0.6);
+  }
+  22% { opacity: 0.3; }
+  24% {
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 1), 0 0 32px rgba(52, 211, 153, 0.9);
+  }
+  26% { opacity: 0.25; }
+  28% {
+    opacity: 0.95;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.9);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+  }
+  52% { opacity: 0.2; }
+  54% {
+    opacity: 0.95;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 1);
+  }
+}
+
+.glowing-beam-line {
+  background: linear-gradient(90deg, #059669, #34d399, #10b981);
+  height: 4px;
+  border-radius: 9999px;
+  animation: neon-beam-blink 3s infinite;
+}
