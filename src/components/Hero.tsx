@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { products } from '../data';
 import { IconWrapper } from './IconWrapper';
+import bgVideo from '../../foto bahan/Background1asli.mp4';
 
 interface HeroProps {
   onScrollToProducts: () => void;
@@ -9,8 +10,22 @@ interface HeroProps {
 
 export function Hero({ onScrollToProducts }: HeroProps) {
   return (
-    <section id="home" className="pt-32 pb-20 px-6 min-h-[90vh] flex items-center max-w-7xl mx-auto w-full relative z-10">
-      <div className="flex flex-col-reverse md:flex-row items-center w-full justify-between">
+    <section id="home" className="relative w-full min-h-[90vh] flex items-center z-10 overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-40 mix-blend-screen"
+        >
+          <source src={bgVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/40 to-transparent"></div>
+      </div>
+
+      <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto w-full relative z-10 flex flex-col-reverse md:flex-row items-center justify-between">
         
         {/* Left side: Zig-zag AI List */}
         <div className="w-full md:w-1/2 mt-16 md:mt-0 flex flex-col justify-center space-y-4">
