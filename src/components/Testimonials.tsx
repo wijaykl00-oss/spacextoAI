@@ -1,5 +1,8 @@
 import React from 'react';
 import { Users, LayoutGrid } from 'lucide-react';
+import client1 from '../../foto bahan/client1.jpeg';
+import client2 from '../../foto bahan/client2.jpeg';
+import client3 from '../../foto bahan/client3.jpeg';
 
 export function Testimonials() {
   return (
@@ -63,14 +66,14 @@ export function Testimonials() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { name: "李建国", role: "软件开发工程师", text: "“在这里购买了 Cursor Ultra，价格比官方便宜很多。即时激活，马上就能写代码！”" },
-          { name: "王晓燕", role: "内容创作者", text: "“Gemini Ultra 真的很棒！多模态功能帮我同时制作图文内容。强烈推荐！”" },
-          { name: "陈志远", role: "数据分析师", text: "“Claude 20x 适合企业级使用，非常稳定。上下文窗口大，轻松处理大数据集。”" }
+          { name: "李建国", role: "软件开发工程师", text: "“在这里购买了 Cursor Ultra，价格比官方便宜很多。即时激活，马上就能写代码！”", image: client1 },
+          { name: "王晓燕", role: "内容创作者", text: "“Gemini Ultra 真的很棒！多模态功能帮我同时制作图文内容。强烈推荐！”", image: client2 },
+          { name: "陈志远", role: "数据分析师", text: "“Claude 20x 适合企业级使用，非常稳定。上下文窗口大，轻松处理大数据集。”", image: client3 }
         ].map((review, i) => (
           <div key={i} className="bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-2xl p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500 text-sm">
-                {review.name[0]}
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-gray-100 border border-gray-200">
+                <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-sm">{review.name}</h4>
