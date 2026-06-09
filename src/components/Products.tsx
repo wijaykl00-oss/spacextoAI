@@ -32,7 +32,8 @@ export function Products({ onBuyClick }: ProductsProps) {
         {products.map((product) => (
           <div 
             key={product.id} 
-            className="bg-gray-900 border border-gray-800 rounded-2xl p-6 relative overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-colors"
+            id={`product-${product.id}`}
+            className="bg-gray-900 border border-gray-800 rounded-2xl p-6 relative overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-colors scroll-mt-24"
           >
             {/* Background elements */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">

@@ -39,8 +39,10 @@ body::before {
 }
 
 .hover-glow-green:hover {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
-  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 
+    0 0 30px rgba(16, 185, 129, 0.8), 
+    0 0 15px rgba(52, 211, 153, 0.5);
+  border-color: rgba(52, 211, 153, 0.9);
 }
 
 /* Custom scrollbar */
@@ -120,3 +122,87 @@ body::before {
   border-radius: 9999px;
   animation: neon-beam-blink 3s infinite;
 }
+
+/* Slow glowing text shadow in green-yellow color */
+@keyframes glow-yellow-green-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 8px rgba(163, 230, 53, 0.45), 
+      0 0 15px rgba(234, 179, 8, 0.25);
+  }
+  50% {
+    text-shadow: 
+      0 0 18px rgba(163, 230, 53, 0.85), 
+      0 0 35px rgba(234, 179, 8, 0.6),  
+      0 0 50px rgba(34, 197, 94, 0.4);  
+  }
+}
+
+.glow-yellow-green-slow {
+  animation: glow-yellow-green-pulse 4s ease-in-out infinite;
+}
+
+/* Success screen animations */
+@keyframes success-burst {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes success-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes success-progress-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.success-burst-circle {
+  position: absolute;
+  border: 3px solid rgba(168, 85, 247, 0.6); /* Purple */
+  border-radius: 50%;
+  animation: success-burst 1.8s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+
+.success-burst-circle-delayed {
+  position: absolute;
+  border: 3px dashed rgba(253, 224, 71, 0.6); /* Yellow */
+  border-radius: 50%;
+  animation: success-burst 1.8s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  animation-delay: 0.9s;
+}
+
+.shattered-ray {
+  position: absolute;
+  width: 3px;
+  height: 70px;
+  background: linear-gradient(to top, transparent, rgba(168, 85, 247, 0.8), rgba(253, 224, 71, 0.8), transparent);
+  transform-origin: bottom center;
+}
+
+.shattered-rays-container {
+  animation: success-rotate 8s linear infinite;
+}
+
+.animate-success-progress {
+  animation: success-progress-bar 5s linear forwards;
+}
+

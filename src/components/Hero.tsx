@@ -38,8 +38,19 @@ export function Hero({ onScrollToProducts }: HeroProps) {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ 
+                  delay: index * 0.1, 
+                  duration: 0.5,
+                  scale: { delay: 0, type: "spring", stiffness: 300, damping: 15 }
+                }}
                 key={product.id}
+                onClick={() => {
+                  const element = document.getElementById(`product-${product.id}`);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className={`flex items-center space-x-4 bg-gray-900/40 border border-gray-800 backdrop-blur-sm p-3 rounded-xl hover-glow-green cursor-pointer transition-all duration-300 w-full sm:w-[85%] ${xOffset}`}
               >
                 <div className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center overflow-hidden">
@@ -76,8 +87,8 @@ export function Hero({ onScrollToProducts }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-white"
           >
-            更实惠的价格， <br />
-            畅享 <span className="relative inline-block text-emerald-400 glow-green-shimmer">高级 AI 工具<span className="absolute left-0 -bottom-1.5 w-full glowing-beam-line"></span></span>。
+            <span className="glow-yellow-green-slow">更实惠的价格，</span> <br />
+            <span className="glow-yellow-green-slow">畅享</span> <span className="relative inline-block text-emerald-400 glow-green-shimmer">高级 AI 工具<span className="absolute left-0 -bottom-1.5 w-full glowing-beam-line"></span></span>。
           </motion.h1>
 
           <motion.p 
