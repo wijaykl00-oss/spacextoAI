@@ -51,11 +51,11 @@ export function CheckoutModal({ isOpen, onClose, product }: CheckoutModalProps) 
     setIsSuccess(true);
 
     setTimeout(() => {
-      const message = `Halo Kak @spacextoai, saya sudah melakukan pembayaran untuk pembelian:\n\n` +
-                      `📦 Produk: ${product.name}\n` +
-                      `🔢 Jumlah: ${quantity}\n` +
-                      `💰 Total Harga: ¥${totalPrice} (≈ IDR ${totalPriceIdr.toLocaleString()})\n\n` +
-                      `Saya telah mengunggah bukti pembayaran di website. Mohon segera diproses ya Kak, terima kasih!`;
+      const message = `您好 @Jurjianto，我已经完成付款，购买内容如下：\n\n` +
+                      `📦 产品：${product.name}\n` +
+                      `🔢 数量：${quantity}个\n` +
+                      `💰 总价：¥${totalPrice}（约合印尼盾 ${totalPriceIdr.toLocaleString()}）\n\n` +
+                      `我已经在网站上传了付款截图，请帮忙尽快处理，谢谢！`;
       
       const telegramUrl = `https://t.me/spacextoai?text=${encodeURIComponent(message)}`;
       window.open(telegramUrl, '_blank');
