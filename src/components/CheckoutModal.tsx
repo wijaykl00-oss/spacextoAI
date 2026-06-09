@@ -51,13 +51,13 @@ export function CheckoutModal({ isOpen, onClose, product }: CheckoutModalProps) 
     setIsSuccess(true);
 
     setTimeout(() => {
-      const message = `Halo Kak @Jurjianto, saya sudah melakukan pembayaran untuk pembelian:\n\n` +
+      const message = `Halo Kak @spacextoai, saya sudah melakukan pembayaran untuk pembelian:\n\n` +
                       `📦 Produk: ${product.name}\n` +
                       `🔢 Jumlah: ${quantity}\n` +
                       `💰 Total Harga: ¥${totalPrice} (≈ IDR ${totalPriceIdr.toLocaleString()})\n\n` +
                       `Saya telah mengunggah bukti pembayaran di website. Mohon segera diproses ya Kak, terima kasih!`;
       
-      const telegramUrl = `https://t.me/Jurjianto?text=${encodeURIComponent(message)}`;
+      const telegramUrl = `https://t.me/spacextoai?text=${encodeURIComponent(message)}`;
       window.open(telegramUrl, '_blank');
       
       // Reset state and close modal
@@ -106,7 +106,7 @@ export function CheckoutModal({ isOpen, onClose, product }: CheckoutModalProps) 
               支付凭证上传成功！
             </h2>
             <p className="text-gray-300 text-sm mb-6 max-w-xs leading-relaxed">
-              Bukti pembayaran berhasil diunggah! Sedang mengarahkan Anda ke Telegram <strong>@Jurjianto</strong> untuk verifikasi...
+              Bukti pembayaran berhasil diunggah! Sedang mengarahkan Anda ke Telegram <strong>@spacextoai</strong> untuk verifikasi...
             </p>
             
             {/* Progress / Countdown indicator */}

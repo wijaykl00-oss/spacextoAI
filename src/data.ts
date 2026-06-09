@@ -8,7 +8,8 @@ export const products: Product[] = [
   {
     id: 'gemini-ultra',
     name: 'Gemini Ultra',
-    price: 180,
+    price: 108,
+    originalPrice: 180,
     iconName: 'Sparkles',
     image: geminiImg,
     description: '可邀请 5 名家庭成员，专为个人专属',
@@ -23,7 +24,8 @@ export const products: Product[] = [
   {
     id: 'claude-5x',
     name: 'Claude 5 x',
-    price: 298,
+    price: 178,
+    originalPrice: 298,
     iconName: 'BrainCircuit',
     image: claudeImg,
     description: 'Anthropic Claude 深度思考与推理能力',
@@ -38,10 +40,11 @@ export const products: Product[] = [
   {
     id: 'claude-20x',
     name: 'Claude 20 x',
-    price: 500,
+    price: 300,
+    originalPrice: 500,
     iconName: 'Zap',
     image: claudeImg,
-    description: '面向企业和专业用户的最强 Claude',
+    description: '面向企业 and 专业用户的最强 Claude',
     features: [
       '无限深度思考',
       '100万 tokens 上下文窗口',
@@ -53,7 +56,8 @@ export const products: Product[] = [
   {
     id: 'cursor-ultra',
     name: 'Cursor Ultra',
-    price: 341,
+    price: 204,
+    originalPrice: 341,
     iconName: 'Code2',
     image: cursorImg,
     description: '无限制的 AI 代码补全，专为开发者打造',
@@ -68,7 +72,8 @@ export const products: Product[] = [
   {
     id: 'gpt-pro-5x',
     name: 'Gpt Pro 5 x',
-    price: 300,
+    price: 180,
+    originalPrice: 300,
     iconName: 'MessageSquare',
     image: gptImg,
     description: 'OpenAI 旗舰模型，极速响应',
@@ -85,10 +90,11 @@ export const products: Product[] = [
   {
     id: 'gpt-pro-20x',
     name: 'Gpt Pro 20 x',
-    price: 520,
+    price: 312,
+    originalPrice: 520,
     iconName: 'Bot',
     image: gptImg,
-    description: 'OpenAI 殿堂级版，适合高频使用者',
+    description: 'OpenAI 殿堂级版，适合 high-frequency users',
     features: [
       '无限 GPT-4 & GPT-5 访问',
       '128k tokens 上下文窗口',

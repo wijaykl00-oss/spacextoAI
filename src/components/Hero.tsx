@@ -62,7 +62,12 @@ export function Hero({ onScrollToProducts }: HeroProps) {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-gray-200">{product.name}</h4>
-                  <p className="text-emerald-400 text-xs font-medium">¥{product.price}</p>
+                  <div className="flex items-center space-x-1.5">
+                    <span className="text-emerald-400 text-xs font-semibold">¥{product.price}</span>
+                    {product.originalPrice && (
+                      <span className="text-gray-500 text-[10px] line-through">¥{product.originalPrice}</span>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             );

@@ -72,8 +72,12 @@ export function Products({ onBuyClick }: ProductsProps) {
               </div>
 
               <div className="mb-6">
-                <div className="text-3xl font-bold text-white flex items-end">
-                  ¥{product.price} <span className="text-sm font-normal text-gray-400 ml-1 mb-1">/月</span>
+                <div className="flex items-baseline space-x-2">
+                  <span className="text-3xl font-bold text-white">¥{product.price}</span>
+                  {product.originalPrice && (
+                    <span className="text-sm text-gray-500 line-through">¥{product.originalPrice}</span>
+                  )}
+                  <span className="text-sm font-normal text-gray-400">/月</span>
                 </div>
               </div>
 
