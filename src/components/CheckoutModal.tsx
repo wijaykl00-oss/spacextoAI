@@ -57,7 +57,7 @@ export function CheckoutModal({ isOpen, onClose, product }: CheckoutModalProps) 
                       `💰 总价：¥${totalPrice}（约合印尼盾 ${totalPriceIdr.toLocaleString()}）\n\n` +
                       `我已经在网站上传了付款截图，请帮忙尽快处理，谢谢！`;
       
-      const telegramUrl = `https://t.me/spacextoai?text=${encodeURIComponent(message)}`;
+      const telegramUrl = `https://t.me/Jurjianto?text=${encodeURIComponent(message)}`;
       window.open(telegramUrl, '_blank');
       
       // Reset state and close modal
@@ -106,7 +106,7 @@ export function CheckoutModal({ isOpen, onClose, product }: CheckoutModalProps) 
               支付凭证上传成功！
             </h2>
             <p className="text-gray-300 text-sm mb-6 max-w-xs leading-relaxed">
-              Bukti pembayaran berhasil diunggah! Sedang mengarahkan Anda ke Telegram <strong>@spacextoai</strong> untuk verifikasi...
+              Bukti pembayaran berhasil diunggah! Sedang mengarahkan Anda ke Telegram <strong>@Jurjianto</strong> untuk verifikasi...
             </p>
             
             {/* Progress / Countdown indicator */}

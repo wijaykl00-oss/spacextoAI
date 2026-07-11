@@ -32,8 +32,8 @@ export function Footer() {
               </div>
               <div>
                 <p className="font-bold text-gray-900 text-sm">电报</p>
-                <a href="https://t.me/spacextoai" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-xs hover:underline cursor-pointer">
-                  @spacextoai
+                <a href="https://t.me/Jurjianto" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-xs hover:underline cursor-pointer">
+                  @Jurjianto
                 </a>
               </div>
             </div>
